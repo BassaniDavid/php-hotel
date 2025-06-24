@@ -56,18 +56,25 @@
     <h3 class="text-center m-5">trova l'hotel ideale per le tue esigenze!</h3>
 
     <!-- form -->
-    <form action="index.php" method="get">
-        <label for="">con parcheggio</label>
-        <input type="checkbox" name="parcheggio" id="">
-        <label for="">stelle hotel</label>
-        <input type="number" name="stelle" id="" min="1" max="5">
-        <button type="submit">invia</button>
+    <form action="index.php" method="get" class="text-center mb-5 p-2 d-flex justify-content-between border rounded-2 container">
+        <div class="d-flex align-items-center gap-2">
+            <label for="parcheggio">con parcheggio</label>
+            <input type="checkbox" name="parcheggio" id="parcheggio">
+        </div>
+        <div class="d-flex align-items-center gap-2">
+            <label for="stelle">stelle hotel</label>
+            <input type="number" name="stelle" id="stelle" min="1" max="5">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">invia</button>
+        </div>
     </form>
 
 
 
 <!-- tabella -->
-<table class="table container table-striped border">
+<div class="p-2 border container rounded-2 bg-primary-subtle">
+<table class="table table-striped table-primary">
 <thead>
   <tr>
     <th scope="col">Hotel</th>
@@ -151,5 +158,6 @@
     ?>
 </tbody>
 </table>
+</div>
 </body>
 </html>
