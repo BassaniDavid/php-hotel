@@ -90,7 +90,7 @@
         // la variabile parcheggio sarà true, altrimenti sarà false
         isset($_GET["parcheggio"]) && $_GET["parcheggio"] == "on" ? $parcheggio = true : $parcheggio = false;
         // la variabile stelle sarà il numero effettivo di stelle inserite dall'utente, altrimenti sarà zero
-        isset($_GET["stelle"]) && $_GET["stelle"] <= 5 && is_numeric($_GET["stelle"]) ? $stelle = $_GET["stelle"] : $stelle = 0;
+        isset($_GET["stelle"]) && $_GET["stelle"] <= 5 && is_numeric($_GET["stelle"]) ? $stelle = (int)$_GET["stelle"] : $stelle = 0;
 
         // itero per ogni elemento di hotels(array che contiene tutte le info di ogni hotel)
         foreach ($hotels as $hotel){
