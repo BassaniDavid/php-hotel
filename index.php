@@ -43,7 +43,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,10 +71,10 @@
 <thead>
   <tr>
     <th scope="col">Hotel</th>
-    <th scope="col">description</th>
-    <th scope="col">parking</th>
-    <th scope="col">vote</th>
-    <th scope="col">distance to center</th>
+    <th scope="col">descrizione</th>
+    <th scope="col">parcheggio</th>
+    <th scope="col">voto</th>
+    <th scope="col">distanza dal centro</th>
   </tr>
 </thead>
 <tbody>
