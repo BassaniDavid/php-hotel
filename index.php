@@ -54,6 +54,18 @@
 <body>
     <h1 class="text-center m-5">php hotel</h1>
     <h3 class="text-center m-5">trova l'hotel ideale per le tue esigenze!</h3>
+
+    <!-- form -->
+    <form action="index.php" method="get">
+        <label for="">con parcheggio</label>
+        <input type="checkbox" name="parcheggio" id="">
+        <label for="">stelle hotel</label>
+        <input type="number" name="stelle" id="" min="1" max="5">
+        <button type="submit">invia</button>
+    </form>
+
+
+
 <!-- tabella -->
 <table class="table container table-striped border">
 <thead>
@@ -67,16 +79,63 @@
 </thead>
 <tbody>
     <?php
+        isset($_GET["parcheggio"]) ? $parcheggio = true : $parcheggio = false;
+        isset($_GET["stelle"]) ? $stelle = $_GET["stelle"] : $stelle = 0;
+
         foreach ($hotels as $hotel){
 
-            echo "<tr>";
+            // filtro stelle
+            if($hotel["vote"] >= $stelle){
 
-            foreach($hotel as $info){
+                // nel caso il filtro per parcheggio sia attivo
+                if($parcheggio){
+                    if($hotel["parking"] == true){
 
-                echo "<td>$info</td>";
+                        echo "<tr>";
+
+                            foreach($hotel as $info){
+                                if($info === true){
+
+                                    echo "<td>presente</td>";
+
+                                } else if($info === false) {
+
+                                    echo "<td>assente</td>";
+
+                                }else{
+
+                                echo "<td>$info</td>";
+
+                                }
+                            }
+
+                        echo "</tr>";
+
+                    }
+                }else{
+
+                    foreach($hotel as $info){
+
+                                if($info === true){
+
+                                    echo "<td>presente</td>";
+
+                                } else if($info === false) {
+
+                                    echo "<td>assente</td>";
+                                        
+                                }else{
+
+                                echo "<td>$info</td>";
+
+                                }
+                    }
+
+                    echo "</tr>";
+                    
+                }
+
             }
-
-            echo "</tr>";
 
         }
     ?>
