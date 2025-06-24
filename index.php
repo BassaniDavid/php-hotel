@@ -51,5 +51,29 @@
 </head>
 <body>
     <h1>php hotel</h1>
+    <!-- tabella -->
+    <table>
+  <tr>
+    <th>Hotel</th>
+    <th>description</th>
+    <th>parking</th>
+    <th>vote</th>
+    <th>distance to center</th>
+  </tr>
+    <?php
+        foreach ($hotels as $hotel){
+
+            echo "<tr>";
+
+            foreach($hotel as $info){
+
+                echo "<td>$info</td>";
+            }
+
+            echo "</tr>";
+
+        }
+    ?>
+    </table>
 </body>
 </html>
