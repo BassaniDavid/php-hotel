@@ -79,30 +79,35 @@
 </thead>
 <tbody>
     <?php
+        //se il parametro esiste e non è un valore nullo...
+        // la variabile parcheggio sarà true, altrimenti sarà false
         isset($_GET["parcheggio"]) ? $parcheggio = true : $parcheggio = false;
+        // la variabile stelle sarà il numero effettivo di stelle inserite dall'utente, altrimenti sarà zero
         isset($_GET["stelle"]) ? $stelle = $_GET["stelle"] : $stelle = 0;
 
+        // itero per ogni elemento di hotels(array che contiene tutte le info di ogni hotel)
         foreach ($hotels as $hotel){
 
-            // filtro stelle
+            // filtro stelle, se è stato inserito toglierà gli hotel con un numero di stelle insufficienti, altrimenti verranno visualizzati tutti
             if($hotel["vote"] >= $stelle){
 
                 // nel caso il filtro per parcheggio sia attivo
                 if($parcheggio){
+                    // se l hotel ha il parcheggio...
                     if($hotel["parking"] == true){
 
                         echo "<tr>";
 
+                            // itera su ogni elemento di quell hotel
                             foreach($hotel as $info){
+                                // se il valore è true sostituisci il risultato (che sarebbe 1, con presente)
                                 if($info === true){
 
                                     echo "<td>presente</td>";
 
-                                } else if($info === false) {
-
-                                    echo "<td>assente</td>";
-
-                                }else{
+                                }
+                                // altrimenti stampa l'informazione
+                                else{
 
                                 echo "<td>$info</td>";
 
@@ -112,19 +117,24 @@
                         echo "</tr>";
 
                     }
+                // se il filtro parcheggio non è attivo
                 }else{
-
+                    // itera su ogni elemento di quell hotel
                     foreach($hotel as $info){
-
+                                // se il valore è true sostituisci il risultato (che sarebbe 1, con presente)
                                 if($info === true){
 
                                     echo "<td>presente</td>";
 
-                                } else if($info === false) {
+                                }
+                                // se il valore è false sostituisci il risultato (che sarebbe vuto, con assente)
+                                else if($info === false) {
 
                                     echo "<td>assente</td>";
                                         
-                                }else{
+                                }
+                                // altrimenti stampa l'informazione
+                                else{
 
                                 echo "<td>$info</td>";
 
