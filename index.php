@@ -47,19 +47,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <title>php-hotel</title>
 </head>
 <body>
-    <h1>php hotel</h1>
-    <!-- tabella -->
-    <table>
+    <h1 class="text-center m-5">php hotel</h1>
+    <h3 class="text-center m-5">trova l'hotel ideale per le tue esigenze!</h3>
+<!-- tabella -->
+<table class="table container table-striped border">
+<thead>
   <tr>
-    <th>Hotel</th>
-    <th>description</th>
-    <th>parking</th>
-    <th>vote</th>
-    <th>distance to center</th>
+    <th scope="col">Hotel</th>
+    <th scope="col">description</th>
+    <th scope="col">parking</th>
+    <th scope="col">vote</th>
+    <th scope="col">distance to center</th>
   </tr>
+</thead>
+<tbody>
     <?php
         foreach ($hotels as $hotel){
 
@@ -74,6 +80,7 @@
 
         }
     ?>
-    </table>
+</tbody>
+</table>
 </body>
 </html>
