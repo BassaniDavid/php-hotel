@@ -4,7 +4,7 @@
 
 ### Milestone 1
 
-Partendo da questo array di hotel. https://www.codepile.net/pile/OEWY7Q1G
+Partendo da questo [array di hotel](https://www.codepile.net/pile/OEWY7Q1G) .
 Stampare una tabella con tutti gli hotel e i relativi dati disponibili.
 
 ### Milestone 2
